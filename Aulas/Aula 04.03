@@ -1,5 +1,5 @@
 
-<algorithm> ::= "ALGORITIMO" "\"" <name_convention> "\";\nVARIAVEIS\n" <var_declaration_section> "INICIO" "\nFIM ALGORITIMO"
+<algorithm> ::= "ALGORITIMO" "\"" <name_convention> "\";\nVARIAVEIS\n" <var_declaration_section> "INICIO\n" <instructions_section> "\nFIM ALGORITIMO"
 
 <name_convention> ::= (<char>)+ (<char> | <underline> | <int_number>)*
 
@@ -8,6 +8,10 @@
 <var_declaration> ::= "\t" <name_convention> "," <name_convention>* " : " <var_type> "\n"
 
 <var_type> ::= "Inteiro" | "Real" | "Texto" | "Logico" 
+
+<instructions_section> ::= <valid_instructions>
+<valid_instructions> ::= <escreva_stm>
+<escreva_stm> ::= "ESCREVA(" "\"" (<char> | <int_number> | " ")* "\");\n"
 
 <int_number> ::= [0-9]
 <char> ::= <uppercase_char> | <lowercase_char>
