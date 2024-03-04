@@ -10,8 +10,15 @@
 <var_type> ::= "Inteiro" | "Real" | "Texto" | "Logico" 
 
 <instructions_section> ::= <valid_instructions>
-<valid_instructions> ::= <escreva_stm>
-<escreva_stm> ::= "ESCREVA(" "\"" (<char> | <int_number> | " ")* "\");\n"
+<valid_instructions> ::= "\t" (<write_stm> | <read_stm> | <attrib_stm>)
+
+<text_to_write> ::= "\"" (<char> | <int_number> | " ")* "\""
+<write_stm> ::= "ESCREVA(" <text_to_write> ");\n"
+
+<text_to_read> ::= "\""
+<read_stm> ::= "\tLEIA(" <name_convention> ");\n"
+
+<attrib_stm> ::= <name_convention> " <-- " (<int_number> | <char>+ | <name_convention>) ";\n"
 
 <int_number> ::= [0-9]
 <char> ::= <uppercase_char> | <lowercase_char>
